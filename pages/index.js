@@ -14,7 +14,6 @@ export const getStaticProps = async() => {
 
 export default function Home({blog}) {
     return (
-        <h2>ブログ一覧</h2>
         <ul>
             {blog.map((blog) => (
                 <li key={blog.id}>
