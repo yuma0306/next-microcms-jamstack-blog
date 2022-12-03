@@ -7,13 +7,14 @@ export const getStaticProps = async() => {
   const data = await client.get({endpoint: 'blog',});
   return {
     props: {
-        blog: data.contents,
+      blog: data.contents,
     },
   };
 };
 
 export default function Home({blog}) {
   return (
+    <>
     <ul>
       {blog.map((blog) => (
         <li key={blog.id}>
@@ -23,5 +24,6 @@ export default function Home({blog}) {
         </li>
       ))}
     </ul>
+    </>
   );
 }
